@@ -1,0 +1,1 @@
+export * as ProfileHeader from './profile-header.jpg'
