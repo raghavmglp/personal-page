@@ -6,7 +6,7 @@ function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <Button>Hello</Button>
-      <ModeToggle></ModeToggle>
+      <ModeToggle/>
     </ThemeProvider>
   )
 }
