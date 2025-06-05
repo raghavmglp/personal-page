@@ -1,9 +1,11 @@
+/* These imports and directives are part of YOUR existing index.css setup */
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* This section defines aliases. It will now use the HSL-based vars below */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -23,6 +25,7 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -42,30 +45,36 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  /* Using the NEW HSL values, wrapped in hsl() */
+  --radius: 0.5rem; /* From your new HSL theme */
+
+  --background: hsl(172.5 24.53% 95.52%);
+  --foreground: hsl(64 51% 5%);
+  --muted: hsl(166.15 27.73% 88.29%);
+  --muted-foreground: hsl(176.61 17.25% 32.8%);
+  --popover: hsl(64 45% 98%);
+  --popover-foreground: hsl(64 51% 5%);
+  --card: hsl(64 45% 98%);
+  --card-foreground: hsl(64 51% 5%);
+  --border: hsl(165.32 23.05% 84.01%);
+  --input: hsl(163.06 22.33% 81.38%);
+  --primary: hsl(176 61% 19%);
+  --primary-foreground: hsl(166 76% 97%);
+  --secondary: hsl(174.67 83.85% 31.57%);
+  --secondary-foreground: hsl(166.15 76.47% 96.67%);
+  --accent: hsl(149.27 10.63% 84.08%);
+  --accent-foreground: hsl(175.93 60.82% 19.02%);
+  --destructive: hsl(7.89 83.73% 40.98%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --ring: hsl(165.32 24.95% 19.58%);
+
+  --chart-1: hsl(176 61% 19%);
+  --chart-2: hsl(174.67 83.85% 31.57%);
+  --chart-3: hsl(149.27 10.63% 84.08%);
+  --chart-4: hsl(174.67 83.85% 34.57%);
+  --chart-5: hsl(176 64% 19%);
+
+  /* Sidebar variables were not in your HSL theme, keeping Oklch or define new HSL */
   --sidebar: oklch(0.984 0.003 247.858);
   --sidebar-foreground: oklch(0.129 0.042 264.695);
   --sidebar-primary: oklch(0.208 0.042 265.755);
@@ -77,29 +86,34 @@
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
+  /* Using the NEW HSL values for the dark theme, wrapped in hsl() */
+  --background: hsl(183.39 44.74% 5.42%);
+  --foreground: hsl(64 36% 97%);
+  --muted: hsl(184 36% 14%);
+  --muted-foreground: hsl(184 18.28% 67.99%);
+  --popover: hsl(180 44.44% 3.53%);
+  --popover-foreground: hsl(64 36% 97%);
+  --card: hsl(178.87 42.04% 3.57%);
+  --card-foreground: hsl(64 36% 97%);
+  --border: hsl(171.43 19.39% 16.36%);
+  --input: hsl(171.43 21.94% 12.99%);
+  --primary: hsl(175.34 77.44% 26.08%);
+  --primary-foreground: hsl(166.15 76.47% 96.67%);
+  --secondary: hsl(173.41 80.39% 40%);
+  --secondary-foreground: hsl(166.15 0% 100%);
+  --accent: hsl(168.39 24.59% 43.22%);
+  --accent-foreground: hsl(175.34 30.13% 86.79%);
+  --destructive: hsl(345.35 82.69% 40.78%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --ring: hsl(168.39 83.78% 78.24%);
+
+  --chart-1: hsl(175.34 77.44% 26.08%);
+  --chart-2: hsl(173.41 80.39% 40%);
+  --chart-3: hsl(168.39 24.59% 43.22%);
+  --chart-4: hsl(173.41 80.39% 43%);
+  --chart-5: hsl(175.34 80.44% 26.08%);
+
+  /* Sidebar variables - keeping Oklch or define new HSL for dark mode */
   --sidebar: oklch(0.208 0.042 265.755);
   --sidebar-foreground: oklch(0.984 0.003 247.858);
   --sidebar-primary: oklch(0.488 0.243 264.376);
